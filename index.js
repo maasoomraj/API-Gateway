@@ -1,5 +1,5 @@
 const express = require('express')
-const middleware = require('./Middlewares/index')
+const middleware = require('./Routes/index')
 const { dbConnect } = require('./Utils/database')
 
 const app = express()

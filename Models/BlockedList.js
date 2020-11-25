@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
- const blacklistSchema = new mongoose.Schema({
+ const blockedListSchema = new mongoose.Schema({
     ip : {
         type : String,
         required: true
@@ -11,4 +11,4 @@ const mongoose = require('mongoose');
     }
  });
 
- module.exports = mongoose.model('Blacklist' , blacklistSchema);
+ module.exports = mongoose.model('BlockedList' , blockedListSchema);

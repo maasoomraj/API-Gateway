@@ -1,7 +1,7 @@
 const axios = require('axios')
 const Request = require('../Models/Request');
 const requestIP = require('request-ip')
-const Blacklist = require('../Models/Blacklist');
+const BlockedList = require('../Models/BlockedList');
 
 exports.routeDisplayBooks = async (req, res) => {
     await axios.get('http://localhost:8000/get-books')
@@ -41,12 +41,12 @@ exports.saveRequest = async (req, res) => {
     await newRequest.save()
 }
 
-exports.blacklistIP = async (req, res) => {
-    const newBlacklist = new Blacklist({
+exports.blockIP = async (req, res) => {
+    const blockUser = new BlockedList({
         ip : req.body.ip
     })
-    await newBlacklist.save()
+    await blockUser.save()
     res.send({
-        Blacklist : newBlacklist.ip
+        Blocked : blockUser.ip
     })
 }
